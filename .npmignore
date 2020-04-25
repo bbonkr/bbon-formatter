@@ -1,1 +1,7 @@
+__test__/
 lib/
+.jest/
+.eslintignore
+.eslintrc
+.prettierrc
+tsconfig.json
