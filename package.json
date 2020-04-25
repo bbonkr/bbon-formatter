@@ -2,7 +2,17 @@
     "name": "@bbon/formatter",
     "version": "1.0.0",
     "description": "Format the entered values.",
-    "main": "index.js",
+    "main": "dist/index.js",
+    "types": "dist/index.d.ts",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bbonkr/-bbon-formatter.git"
+    },
+    "keywords": [
+        "formatting",
+        "string",
+        "utility"
+    ],
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1",
         "build": "tsc",
