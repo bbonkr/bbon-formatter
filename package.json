@@ -20,8 +20,8 @@
     "scripts": {
         "test": "jest",
         "build": "tsc",
-        "lint": "eslint ./lib/**/*.ts",
-        "lint:fix": "eslint ./lib/**/*.ts --fix"
+        "lint": "eslint ./src/**/*.ts",
+        "lint:fix": "eslint ./src/**/*.ts --fix"
     },
     "author": "Pon Cheol Ku <dev@bbon.kr> (http://bbon.kr)",
     "license": "MIT",
