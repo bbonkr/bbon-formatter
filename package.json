@@ -6,7 +6,11 @@
     "types": "dist/index.d.ts",
     "repository": {
         "type": "git",
-        "url": "https://github.com/bbonkr/-bbon-formatter.git"
+        "url": "git+https://github.com/bbonkr/bbon-formatter.git"
+    },
+    "homepage": "https://github.com/bbonkr/bbon-formatter",
+    "bugs": {
+        "url": "https://github.com/bbonkr/bbon-formatter/issues"
     },
     "keywords": [
         "formatting",
