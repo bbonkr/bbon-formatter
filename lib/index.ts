@@ -1,0 +1,1 @@
+export { StringFormatter } from './StringFormatter';
