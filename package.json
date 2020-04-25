@@ -14,20 +14,40 @@
         "utility"
     ],
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1",
+        "test": "jest",
         "build": "tsc",
-        "lint": "tsc --noEmit && eslint ./lib/**/*.ts"
+        "lint": "eslint ./lib/**/*.ts",
+        "lint:fix": "eslint ./lib/**/*.ts --fix"
     },
     "author": "Pon Cheol Ku <dev@bbon.kr> (http://bbon.kr)",
     "license": "MIT",
     "devDependencies": {
+        "@types/jest": "^25.2.1",
+        "@types/node": "^13.13.2",
         "@typescript-eslint/eslint-plugin": "^2.29.0",
         "@typescript-eslint/parser": "^2.29.0",
         "eslint": "^6.8.0",
         "eslint-config-prettier": "^6.11.0",
         "eslint-plugin-import": "^2.20.2",
         "eslint-plugin-prettier": "^3.1.3",
+        "jest": "^25.4.0",
         "prettier": "^2.0.5",
+        "ts-jest": "^25.4.0",
         "typescript": "^3.8.3"
+    },
+    "jest": {
+        "transform": {
+            "^.+\\.(ts|tsx)$": "ts-jest"
+        },
+        "globals": {
+            "ts-jest": {
+                "tsConfig": "tsconfig.json"
+            }
+        },
+        "testRegex": "\\.(test|spec)\\.((js|ts))$",
+        "setupFilesAfterEnv": [
+            "./__test__/setup.ts"
+        ],
+        "cacheDirectory": "./.jest/cache"
     }
 }
