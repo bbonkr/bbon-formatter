@@ -7,3 +7,5 @@ beforeAll(() => {
 afterAll(() => {
     // release resources when test ends
 });
+
+export default {};
