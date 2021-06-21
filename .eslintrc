@@ -13,6 +13,7 @@
         // Place to specify ESLint rules. Can be used to overwrite rules specified from the extended configs
         // e.g. "@typescript-eslint/explicit-function-return-type": "off",
         "no-console": "warn",
-        "linebreak-style": [0, "error", "windows"]
+        "linebreak-style": [0, "error", "windows"],
+        "@typescript-eslint/no-var-requires": "off"
     }
 }
