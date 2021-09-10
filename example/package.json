@@ -20,7 +20,7 @@
         "starter kit"
     ],
     "author": "Pon Cheol Ku <dev@bbon.kr> (http://bbon.kr)",
-    "license": "ISC",
+    "license": "MIT",
     "bugs": {
         "url": "https://github.com/bbonkr/react-starter-kit/issues"
     },
