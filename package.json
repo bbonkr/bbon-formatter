@@ -1,9 +1,14 @@
 {
     "name": "@bbon/formatter",
-    "version": "1.1.1",
+    "version": "1.2.0",
     "description": "Format the entered values.",
-    "main": "dist/index.js",
+    "main": "dist/index.cjs.js",
+    "module": "dist/index.esm.js",
     "types": "dist/index.d.ts",
+    "sideEffects": false,
+    "files": [
+        "dist/**/*.{js,map,ts}"
+    ],
     "repository": {
         "type": "git",
         "url": "git+https://github.com/bbonkr/bbon-formatter.git"
@@ -19,7 +24,7 @@
     ],
     "scripts": {
         "test": "jest",
-        "build": "webpack",
+        "build": "rollup -c",
         "lint": "eslint ./src/**/*.ts",
         "lint:fix": "eslint ./src/**/*.ts --fix"
     },
@@ -30,6 +35,9 @@
         "@babel/plugin-syntax-dynamic-import": "^7.8.3",
         "@babel/preset-env": "^7.14.5",
         "@babel/preset-typescript": "^7.14.5",
+        "@rollup/plugin-babel": "^5.3.0",
+        "@rollup/plugin-commonjs": "^20.0.0",
+        "@rollup/plugin-node-resolve": "^13.0.4",
         "@types/jest": "^26.0.23",
         "@types/node": "^15.12.2",
         "@typescript-eslint/eslint-plugin": "^4.27.0",
@@ -42,11 +50,14 @@
         "eslint-plugin-prettier": "^3.4.0",
         "jest": "^27.0.4",
         "prettier": "^2.3.1",
+        "rollup": "^2.56.3",
+        "rollup-plugin-copy": "^3.4.0",
+        "rollup-plugin-peer-deps-external": "^2.2.4",
+        "rollup-plugin-typescript2": "^0.30.0",
         "ts-jest": "^27.0.3",
         "ts-loader": "^9.2.3",
-        "typescript": "^4.3.4",
-        "webpack": "^5.39.1",
-        "webpack-cli": "^4.7.2"
+        "tslib": "^1.14.1",
+        "typescript": "^4.3.4"
     },
     "jest": {
         "transform": {

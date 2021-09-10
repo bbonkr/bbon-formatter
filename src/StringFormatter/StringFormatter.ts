@@ -1,5 +1,5 @@
-import { ValueTooHugeError } from './ValueTooHugeException';
-
+import { ValueTooHugeError } from './ValueTooHugeError';
+import { ValueInvalidError } from './ValueInvalidError';
 export type NumberFormatter = (number: string) => string;
 
 /**
@@ -76,11 +76,13 @@ export class StringFormatter {
      * ```
      */
     public fileSize(
-        value: number,
+        value: number | string,
         numberFormatter?: NumberFormatter,
         units?: string[],
     ): string {
-        if (Number.MAX_VALUE < value) {
+        const numberValue = this.ensureNumberValue(value);
+
+        if (Number.MAX_VALUE < numberValue) {
             throw new ValueTooHugeError();
         }
 
@@ -89,7 +91,7 @@ export class StringFormatter {
         const basis = 1024.0;
 
         let index = 0;
-        let temp = value;
+        let temp = numberValue;
 
         if (temp < basis) {
             return this.toFomattedFileSize(
@@ -124,6 +126,24 @@ export class StringFormatter {
         }
 
         return `${stringValue} ${unit}`;
+    }
+
+    private ensureNumberValue(value?: number | string): number {
+        if (typeof value === 'undefined') {
+            return 0;
+        }
+
+        if (typeof value === 'string') {
+            const numberValue = parseFloat(value);
+
+            if (Number.isNaN(numberValue)) {
+                throw new ValueInvalidError();
+            }
+
+            return numberValue;
+        }
+
+        return value;
     }
 
     private min(a: number, b: number): number {
