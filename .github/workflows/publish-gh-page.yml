@@ -1,0 +1,38 @@
+name: publish gh-pages
+
+on:
+  push:
+    branches:
+      - main
+    tags:
+      - "!*"
+
+jobs:
+  publish:
+    name: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - name: Setup Node
+        uses: actions/setup-node@v2
+        with:
+          node-version: '14.x'
+      - name: install dependencies
+        working-directory: ./example
+        run: npm install
+      # - name: lint
+      #   run: npm run lint
+      - name: build
+        working-directory: ./example
+        env:
+          NODE_ENV: production
+        run: npm run build
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v3
+        with:
+          github_token: ${{ secrets.GH_TOKEN }}
+          publish_branch: gh-pages
+          publish_dir: ./example/out
