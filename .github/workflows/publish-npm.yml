@@ -1,16 +1,9 @@
 name: publish NPM
 
 on:
-  # schedule:
-    # - cron: '0 10 * * *' # everyday at 10am
   push:
-    # branches:
-    #   - '**'
     tags:
       - 'v*.*.*'
-  # pull_request:
-  #   branches:
-  #     - 'master'
 
 jobs:
   publish:
