@@ -1,5 +1,6 @@
 import { StringFormatter } from './StringFormatter';
-import { ValueTooHugeError } from './ValueTooHugeException';
+import { ValueTooHugeError } from './ValueTooHugeError';
+import { ValueInvalidError } from './ValueInvalidError';
 
 describe('StringFormatter.numberWithDelimiter', () => {
     const formatter = new StringFormatter();
@@ -35,6 +36,16 @@ describe('StringFormatter.fileSize', () => {
 
     it('값이 기준값 (1024) 보다 작은 경우', () => {
         expect(formatter.fileSize(1000)).toBe('1000 Bytes');
+    });
+
+    it('값이 숫자 형식의 문자열인 경우', () => {
+        expect(formatter.fileSize('1000')).toBe('1000 Bytes');
+    });
+
+    it('값이 숫자 형식의 문자열이 아닌 경우', () => {
+        expect(() => formatter.fileSize('hello world')).toThrow(
+            ValueInvalidError,
+        );
     });
 
     it('값이 소수점을 포함하고 기준값 (1024) 보다 작은 경우', () => {
