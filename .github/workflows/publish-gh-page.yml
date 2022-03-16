@@ -20,11 +20,17 @@ jobs:
         with:
           node-version: '16'
 
-      - name: install dependencies
+      - name: install dependencies 
+        run: |
+          npm install 
+
+      - name: create local package
+        run: |
+          npm run pack:local
+
+      - name: install dependencies Example 
         working-directory: ./example
         run: npm install
-      # - name: lint
-      #   run: npm run lint
 
       - name: build
         working-directory: ./example
