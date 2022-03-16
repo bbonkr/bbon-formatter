@@ -6,7 +6,7 @@ import commonjs from '@rollup/plugin-commonjs';
 import pkg from './package.json';
 
 const extensions = ['.js', '.jsx', '.ts', '.tsx'];
-const external = ['react', 'react-dom', 'dayjs'];
+const external = [];
 
 process.env.BABEL_ENV = 'production';
 

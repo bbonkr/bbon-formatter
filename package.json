@@ -27,7 +27,7 @@
         "build": "rollup -c",
         "lint": "eslint ./src/**/*.ts",
         "lint:fix": "eslint ./src/**/*.ts --fix",
-        "prepack:local":"npm run build",
+        "prepack:local": "npm run build",
         "pack:local": "mkdir -p out && npm pack --pack-destination out"
     },
     "author": "Pon Cheol Ku <dev@bbon.kr> (http://bbon.kr)",
@@ -55,11 +55,11 @@
         "rollup": "^2.56.3",
         "rollup-plugin-copy": "^3.4.0",
         "rollup-plugin-peer-deps-external": "^2.2.4",
-        "rollup-plugin-typescript2": "^0.30.0",
+        "rollup-plugin-typescript2": "^0.31.2",
         "ts-jest": "^27.0.3",
         "ts-loader": "^9.2.3",
         "tslib": "^2.3.1",
-        "typescript": "^4.3.4"
+        "typescript": "^4.6.2"
     },
     "jest": {
         "transform": {
