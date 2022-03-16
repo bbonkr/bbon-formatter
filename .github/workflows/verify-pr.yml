@@ -53,7 +53,7 @@ jobs:
           npm run build 
 
       - name: Add comment 
-        uses: unsplash/comment-on-pr@v1.3.1
+        uses: unsplash/comment-on-pr@v1.3.0
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
           OUTPUT: "✅ This pull request is verified to build."
