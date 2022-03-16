@@ -13,41 +13,57 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          fetch-depth: 1
+        uses: actions/checkout@v3 
+
       - name: Setup Node
         uses: actions/setup-node@v2
         with:
-          node-version: '14.x'
+          node-version: '16'
+
       - name: install dependencies
         run: npm install
+
       - name: lint
         run: npm run lint
+
       - name: build
         env:
           NODE_ENV: production
         run: npm run build
 
-      - name: get version
-        id: get_package_version
-        run: echo "::set-output name=version::$(node -p -e "require('./package.json').version")"
-      - name: set version 
-        run: echo "PACKAGE_VERSION=${{ steps.get_package_version.outputs.version }}" >> $GITHUB_ENV 
+      - name: Get package version 
+        id: get_version 
+        uses: bbonkr/get-version-action@v1.0.3
+        with:
+          project: "./package.json"
+
+      - uses: bbonkr/git-tag-check-action@v1.0.9
+        id: check_tag
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          tag: "v${{ steps.get_version.outputs.version }}"
 
       - name: package-version-to-git-tag
         uses: pkgdeps/git-tag-action@v2
+        if: ${{ steps.check_tag.outputs.tag == '' }}
         with:
           github_token: ${{ secrets.GH_TOKEN }}
           github_repo: ${{ github.repository }}
-          version: ${{ env.PACKAGE_VERSION }}
+          version: ${{ steps.get_version.outputs.version }}
           git_commit_sha: ${{ github.sha }}
           git_tag_prefix: "v"
+
       - name: Release Drafter
         id: release_drafter
         uses: release-drafter/release-drafter@v5
+        if: ${{ steps.check_tag.outputs.tag == '' }}
         with:
           config-name: release-drafter.yml
-          version: ${{ env.PACKAGE_VERSION }}
+          version: ${{ steps.get_version.outputs.version }}
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
+
+      - name: git tag skipped
+        if: ${{ steps.check_tag.outputs.tag != '' }}
+        run: |
+          echo "Tag (v${{ steps.check_tag.outputs.tag }}) is exists already." 
