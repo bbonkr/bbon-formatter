@@ -26,7 +26,9 @@
         "test": "jest",
         "build": "rollup -c",
         "lint": "eslint ./src/**/*.ts",
-        "lint:fix": "eslint ./src/**/*.ts --fix"
+        "lint:fix": "eslint ./src/**/*.ts --fix",
+        "prepack:local":"npm run build",
+        "pack:local": "mkdir -p out && npm pack --pack-destination out"
     },
     "author": "Pon Cheol Ku <dev@bbon.kr> (http://bbon.kr)",
     "license": "MIT",
