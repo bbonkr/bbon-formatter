@@ -52,7 +52,7 @@ jobs:
         run: |
           npm run build 
 
-      - name: 👓 Netlify Preview URL
+      - name: Add comment 
         uses: unsplash/comment-on-pr@v1.3.0
         env:
           GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
