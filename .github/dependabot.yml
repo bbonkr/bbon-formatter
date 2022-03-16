@@ -8,6 +8,17 @@ updates:
     labels:
       - "npm"
       - "dependencies" 
+
+  - package-ecosystem: npm
+    directory: /example/
+    target-branch: "dev"
+    schedule:
+      interval: weekly
+    labels:
+      - "npm"
+      - "dependencies" 
+      - "example"
+
   - package-ecosystem: github-actions
     directory: /
     target-branch: "dev"
