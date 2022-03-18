@@ -49,6 +49,7 @@ jobs:
       - name: Install dependencies Example project
         working-directory: ./example 
         run: |
+          npm install --save "../out/bbon-formatter-${{ steps.get_version.outputs.version }}.tgz"
           npm install 
      
       - name: Build Example project 
