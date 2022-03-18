@@ -45,7 +45,7 @@
         "@types/react-dom": "^17.0.13",
         "@types/react-router-dom": "^5.1.7",
         "@typescript-eslint/eslint-plugin": "^4.15.2",
-        "@typescript-eslint/parser": "^4.15.2",
+        "@typescript-eslint/parser": "^4.33.0",
         "babel-loader": "^8.2.2",
         "babel-plugin-transform-remove-console": "^6.9.4",
         "cross-env": "^7.0.3",
