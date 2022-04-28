@@ -33,11 +33,11 @@ jobs:
 
       - name: Get package version 
         id: get_version 
-        uses: bbonkr/get-version-action@v1.0.3
+        uses: bbonkr/get-version-action@v1.0.4
         with:
           project: "./package.json"
 
-      - uses: bbonkr/git-tag-check-action@v1.0.9
+      - uses: bbonkr/git-tag-check-action@v1.0.10
         id: check_tag
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
