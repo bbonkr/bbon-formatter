@@ -29,7 +29,7 @@
         "@bbon/formatter": "file:../out/bbon-formatter-1.2.4.tgz",
         "@loadable/component": "^5.14.1",
         "react": "^18.0.0",
-        "react-dom": "^18.0.0",
+        "react-dom": "^18.1.0",
         "react-helmet-async": "^1.0.9",
         "react-router-dom": "^5.2.0"
     },
@@ -43,7 +43,7 @@
         "@types/loadable__component": "^5.13.3",
         "@types/react": "^17.0.43",
         "@types/react-dom": "^17.0.13",
-        "@types/react-router-dom": "^5.1.7",
+        "@types/react-router-dom": "^5.3.3",
         "@typescript-eslint/eslint-plugin": "^4.33.0",
         "@typescript-eslint/parser": "^4.33.0",
         "babel-loader": "^8.2.4",
