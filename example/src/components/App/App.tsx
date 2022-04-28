@@ -1,10 +1,5 @@
 import React from 'react';
-import {
-    HashRouter as Router,
-    Switch,
-    Route,
-    Redirect,
-} from 'react-router-dom';
+import { HashRouter as Router, Routes, Route } from 'react-router-dom';
 import { HelmetProvider } from 'react-helmet-async';
 import { AsyncComponent, LoadingComponent } from '../AsyncComponent';
 
@@ -28,6 +23,11 @@ const PageNotFound = AsyncComponent(() => import('../PageNotFound'), {
     fallback: <LoadingComponent />,
 });
 
+const Redirect = AsyncComponent(() => import('../Redirect'), {
+    resolveComponent: (props) => props.Redirect,
+    fallback: <LoadingComponent />,
+});
+
 const helmetContext = {};
 
 export const App = () => {
@@ -35,28 +35,17 @@ export const App = () => {
         <HelmetProvider context={helmetContext}>
             <Router>
                 <Header />
-                <Switch>
-                    <Route path="/" exact>
-                        <Home />
-                    </Route>
-                    <Route path="/about" exact>
-                        <About />
-                    </Route>
-                    <Route path="/404" exact>
-                        <PageNotFound />
-                    </Route>
+                <Routes>
+                    <Route path="/" element={<Home />} />
+
+                    <Route path="/about" element={<About />} />
+                    <Route path="/404" element={<PageNotFound />} />
+
                     <Route
                         path="*"
-                        render={(props) => (
-                            <Redirect
-                                to={{
-                                    pathname: '/404',
-                                    state: { from: props.location },
-                                }}
-                            />
-                        )}
-                    ></Route>
-                </Switch>
+                        element={<Redirect path="/404" replace />}
+                    />
+                </Routes>
             </Router>
         </HelmetProvider>
     );
