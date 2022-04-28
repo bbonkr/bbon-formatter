@@ -27,7 +27,7 @@
     "homepage": "https://github.com/bbonkr/react-starter-kit#readme",
     "dependencies": {
         "@bbon/formatter": "file:../out/bbon-formatter-1.2.4.tgz",
-        "@loadable/component": "^5.14.1",
+        "@loadable/component": "^5.15.2",
         "react": "^18.0.0",
         "react-dom": "^18.0.0",
         "react-helmet-async": "^1.0.9",
