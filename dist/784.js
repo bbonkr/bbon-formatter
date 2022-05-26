@@ -1,0 +1,1 @@
+"use strict";(self.webpackChunk_bbon_formatter_example=self.webpackChunk_bbon_formatter_example||[]).push([[784],{784:(e,r,t)=>{t.r(r),t.d(r,{Redirect:()=>n});var a=t(294),c=t(974),n=function(e){var r=e.path,t=e.replace,n=(0,c.TH)();return a.createElement(c.Fg,{replace:t,to:r,state:{from:n}})}}}]);
