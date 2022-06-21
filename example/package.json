@@ -26,7 +26,7 @@
     },
     "homepage": "https://github.com/bbonkr/react-starter-kit#readme",
     "dependencies": {
-        "@bbon/formatter": "file:../out/bbon-formatter-1.2.6.tgz",
+        "@bbon/formatter": "file:../out/bbon-formatter-1.2.7.tgz",
         "@loadable/component": "^5.15.2",
         "react": "^18.1.0",
         "react-dom": "^18.1.0",
