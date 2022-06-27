@@ -28,7 +28,7 @@
     "dependencies": {
         "@bbon/formatter": "file:../out/bbon-formatter-1.2.7.tgz",
         "@loadable/component": "^5.15.2",
-        "react": "^18.1.0",
+        "react": "^18.2.0",
         "react-dom": "^18.1.0",
         "react-helmet-async": "^1.3.0",
         "react-router-dom": "^6.3.0"
@@ -41,7 +41,7 @@
         "@babel/preset-typescript": "^7.17.12",
         "@pmmmwh/react-refresh-webpack-plugin": "^0.5.4",
         "@types/loadable__component": "^5.13.4",
-        "@types/react": "^17.0.43",
+        "@types/react": "^18.0.14",
         "@types/react-dom": "^18.0.5",
         "@types/react-router-dom": "^5.3.3",
         "@typescript-eslint/eslint-plugin": "^5.21.0",
