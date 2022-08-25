@@ -62,9 +62,7 @@
         "typescript": "^4.6.2"
     },
     "jest": {
-        "transform": {
-            "^.+\\.(ts|tsx)$": "ts-jest"
-        },
+        "preset": "ts-jest",
         "globals": {
             "ts-jest": {
                 "tsConfig": "tsconfig.json"
