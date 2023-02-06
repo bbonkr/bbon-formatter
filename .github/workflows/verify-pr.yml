@@ -42,7 +42,7 @@ jobs:
 
       - name: Get package version 
         id: get_version 
-        uses: bbonkr/get-version-action@v1.0.4
+        uses: bbonkr/get-version-action@v1.0.6
         with:
           project: "./package.json"
     
